@@ -1,0 +1,5 @@
+        ld vlan_tci
+        jneq #10, drop
+        ret #-1
+drop:   ret #0
+

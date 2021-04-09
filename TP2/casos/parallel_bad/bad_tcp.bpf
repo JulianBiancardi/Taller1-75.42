@@ -1,0 +1,7 @@
+        ldh [12]
+up:     jne #0x800, drop
+        ldb [23]
+        jneq #6, up
+        ret #-1
+drop:   ret #0
+

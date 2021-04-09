@@ -1,0 +1,4 @@
+jmp skip
+ld [2]
+skip: ret #-1
+

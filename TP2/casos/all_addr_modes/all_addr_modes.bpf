@@ -1,0 +1,7 @@
+            jmp l1
+l1:         jeq #1, l2true, l2false
+l2true:     jeq #2, l3true
+
+l3true:     ldh [1]
+l2false:    ret #0
+
