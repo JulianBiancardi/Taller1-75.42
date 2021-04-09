@@ -75,7 +75,7 @@ A partir del archivo de texto, que contendra el programa eBPF, debemos detectar 
 
 Para realizar esto contamos con la clase `Parser` que contiene las siguientes funcionalidades:
 
-![Parser](/imagenes/Parser.png)
+![Parser](imagenes/Parser.png)
 
 - **detect_label**: nos dará el label de la instruccion si es que tiene.
 - **iterate**: a partir de una linea de codigo  nos dará los argumentos que contiene esta misma. Para poder entender mejor esto se explicará mediantes el siguiente caso general:
@@ -85,7 +85,7 @@ Para realizar esto contamos con la clase `Parser` que contiene las siguientes fu
 
 Para el trabajo se optó por la implementacion de un grafo dirigido mediante una **lista de adjacencia**. Para esto tenemos una clase `Graph` la cual contiene las siguientes funcionalidades:
 
-![Graph](/imagenes/Graph.png)
+![Graph](imagenes/Graph.png)
 
 - **add_edge**: agrega una arista entre en el nodo inicio (start) y nodo fin (end).
 - **cyclic**: nos dice si el grafo dirigido contiene al menos un ciclo.
@@ -115,7 +115,7 @@ Notar que para algunas instrucciones debemos generar una arista entre la linea d
 
 3. Luego de haber generado el grafo del codigo eBPF procedemos a verificar si contiene ciclos o instrucciones sin uso utilizando los metodos de la misma clase `Graph`.
 
-![ebpfVerifier](/imagenes/ebpfVerifier.png)
+![ebpfVerifier](imagenes/ebpfVerifier.png)
 
 - **isCyclic**: nos dice si el programa eBPF contiene ciclos.
 - **isnonReachable**: nos dice si el programa eBPF contiene instrucciones sin uso.
@@ -135,7 +135,7 @@ Esta clase se encargara de contener todos los nobres de archivos **a ser analiza
 
 Esta clase tiene las siguientes funcionalidades:
 
-![filesContainer](/imagenes/FilesContainer.png)
+![filesContainer](imagenes/FilesContainer.png)
 
 - **add**: agrega un nombre de archivo a la cola. Como se menciono en la seccion `Supuestos`, el contenedor podrá tener nombres de archivos repetidos.
 - **getfilename**: obtenemos el primer nombre de archivo presente en la cola. Al ser un recurso compartido, debemos incluir un [mutex](http://www.cplusplus.com/reference/mutex/mutex/) para evitar *races conditions*.
@@ -146,7 +146,7 @@ Esta clase se encargara de contener los resultados de los analisis realizados po
 
 Esta clase tiene las siguientes funcionalidades:
 
-![resultsContainer](/imagenes/ResultsContainer.png)
+![resultsContainer](imagenes/ResultsContainer.png)
 
 - **add**: agrega el resultado de la verificación. Nuevamente al ser un recurso compartido, debemos incluir un [mutex](http://www.cplusplus.com/reference/mutex/mutex/) para evitar *races conditions*.
 - **show**: muestra todos los resultados agregados en el contenedor.
@@ -155,7 +155,7 @@ Esta clase tiene las siguientes funcionalidades:
 
 A continuacion de muestra un diagrama de clases del modelo general implementado, incorporando todas las clases antes mencionados para poder visualizar como funcionan en conjunto:
 
-![Diagrama general](/imagenes/DiagramaGeneral.png)
+![Diagrama general](imagenes/DiagramaGeneral.png)
 
 
 En resumen:
