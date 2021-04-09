@@ -87,7 +87,7 @@ Si bien para obtener los datos de entrada podríamos utilizar memoria dinámica 
 
 Se decide entonces leer el archivo de entrada de a 64 bytes, utilizando para esto un buffer estático de longitud fija. Para esto se genera un TDA `freader`:
 
-![TDA Freader](/imagenes/TDA_Freader.png)
+![TDA Freader](imagenes/TDA_Freader.png)
 
 Mediante este TDA podremos realizar las siguientes operaciones:
 
@@ -122,7 +122,7 @@ Una vez que se tiene la lectura del archivo procedemos a cifrar/descifrar los da
 
 Para realizar esto se opto por crear un TDA `crypto` como se muestra a continuacion:
 
-![TDA Crypto](/imagenes/TDA_Crypto.png)
+![TDA Crypto](imagenes/TDA_Crypto.png)
 
 Debemos inicializarlo con la funcion **crypto_crear** la cual recibira un `metodo` y una `clave`. Estos argumentos pueden ser:
 1. metodo = *cesar*: tener en cuenta que este metodo requiere de una clave numerica, por lo que se utilizara la funcion [strol](https://www.tutorialspoint.com/c_standard_library/c_function_strtol.htm).
@@ -141,7 +141,7 @@ Ambos resultados,tanto el cifrado como el descifrado, estaran dado por el `metod
 
 Ya teniendo los datos del archivo, pudiendolos cifrar y descifrar, solamente nos queda el envio de los mismos entre el cliente y el servidor. Para realizar esto ultimo se crean 3 nuevos TDAs, cliente servidor y socket.
 
-![Relacion entre el cliente y el servidor](/imagenes/RelacionClienteServidor.png)
+![Relacion entre el cliente y el servidor](imagenes/RelacionClienteServidor.png)
 
 Tanto el cliente como el servidor tendran una relacion de agregacion con el socket y a continuacion explicaremos cada uno en detalle.
 
@@ -154,7 +154,7 @@ Este TDA tiene como fin que dos procesos independientes puedan comunicarse entre
 
 Los sockets nos permiten implementar una arquitectura cliente-servidor.
 
-![TDA Socket](/imagenes/TDA_Socket.png)
+![TDA Socket](imagenes/TDA_Socket.png)
 
 Mediante este TDA podremos realizar las siguientes operaciones:
 
@@ -169,7 +169,7 @@ Todas las funciones usan manejo de errores por lo que `puertos`,`host`,`etc` vac
 
 ### 4.5.2 Cliente
 
-![TDA Cliente](/imagenes/TDA_Cliente.png)
+![TDA Cliente](imagenes/TDA_Cliente.png)
 
 Mediante este TDA podremos realizar las siguientes operaciones:
 
@@ -179,7 +179,7 @@ Mediante este TDA podremos realizar las siguientes operaciones:
 
 ### 4.5.3 Servidor
 
-![TDA Servidor](/imagenes/TDA_Servidor.png)
+![TDA Servidor](imagenes/TDA_Servidor.png)
 
 Mediante este TDA podremos realizar las siguientes operaciones:
 
@@ -194,7 +194,7 @@ La funcion **servidor_correr** realizara un bind y listen en el puerto y host es
 
 A continuacion de muestra un diagrama de clases del modelo general implementado, incorporando todos los TDAs antes mencionados para poder visualizar como funcionan en conjunto:
 
-![Diagrama general](/imagenes/DiagramaGeneral.png)
+![Diagrama general](imagenes/DiagramaGeneral.png)
 
 En resumen:
 
