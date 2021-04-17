@@ -139,7 +139,7 @@ Entonces mediante la utilización de hilos (threads) realizaremos el siguiente d
 
 Realizando esto tenemos la siguiente clase madre `Thread` de las cuales heredan tanto `ThAccepter` y `ThClient` como se muestra a continuación:
 
-![ThreadDiagrama](/imagenes/ThreadDiagrama.png)
+![ThreadDiagrama](imagenes/ThreadDiagrama.png)
 
 
 ### 4.6  Modelo 
